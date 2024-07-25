@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 @Entity
 public class Account {
 
-    public Account() {
+    protected Account() {
 
     }
 
