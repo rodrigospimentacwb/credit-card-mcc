@@ -1,5 +1,3 @@
-# application.yaml
-
 spring:
   application:
     name: credit-card-mcc

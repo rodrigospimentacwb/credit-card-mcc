@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: rodrigo.pimenta
+      changes:
+        - createTable:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: food_balance
+                  type: decimal(19,2)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: meal_balance
+                  type: decimal(19,2)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: cash_balance
+                  type: decimal(19,2)
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: 2
+      author: rodrigo.pimenta
+      changes:
+        - insert:
+            tableName: account
+            columns:
+              - column:
+                  name: food_balance
+                  value: 100.00
+              - column:
+                  name: meal_balance
+                  value: 100.00
+              - column:
+                  name: cash_balance
+                  value: 100.00
