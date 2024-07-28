@@ -2,6 +2,11 @@ databaseChangeLog:
   - changeSet:
       id: 1
       author: rodrigo.pimenta
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            tableExists:
+              tableName: transaction
       changes:
         - createTable:
             tableName: transaction

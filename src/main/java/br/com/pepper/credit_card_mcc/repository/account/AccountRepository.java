@@ -1,6 +1,6 @@
-package br.com.pepper.credit_card_mcc.repository;
+package br.com.pepper.credit_card_mcc.repository.account;
 
-import br.com.pepper.credit_card_mcc.model.Account;
+import br.com.pepper.credit_card_mcc.model.account.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
