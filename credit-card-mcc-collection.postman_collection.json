@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "42a19df2-68a9-408f-a9e1-757a6bcb55fc",
+		"name": "credit-card-mcc-collection",
+		"description": "Colelction para execução das chamadas no projeto cc-mcc.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17659128"
+	},
+	"item": [
+		{
+			"name": "create-transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"account\" : \"1\",\n   \"totalAmount\" : 50.00,\n   \"mcc\" : \"5411\",\n   \"merchant\" : \"Padaria do seu Ze SAO PAULO BR\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/transactions/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

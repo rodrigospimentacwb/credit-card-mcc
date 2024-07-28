@@ -1,0 +1,93 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: rodrigo.pimenta
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            tableExists:
+              tableName: merchant
+      changes:
+        - createTable:
+            tableName: merchant
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_on
+                  type: timestamp
+                  constraints:
+                    nullable: false
+                    defaultValueComputed: CURRENT_TIMESTAMP
+              - column:
+                  name: mcc
+                  type: varchar(4)
+                  constraints:
+                    nullable: false
+        - addUniqueConstraint:
+            columnNames: name
+            constraintName: uq_merchant_name
+            tableName: merchant
+
+  - changeSet:
+      id: 2
+      author: rodrigo.pimenta
+      changes:
+        - insert:
+            tableName: merchant
+            columns:
+              - column:
+                  name: name
+                  value: "UBER TRIP SAO PAULO BR"
+              - column:
+                  name: created_on
+                  value: NOW()
+              - column:
+                  name: mcc
+                  value: "CASH"
+        - insert:
+            tableName: merchant
+            columns:
+              - column:
+                  name: name
+                  value: "UBER EATS SAO PAULO BR"
+              - column:
+                  name: created_on
+                  value: NOW()
+              - column:
+                  name: mcc
+                  value: "FOOD"
+        - insert:
+            tableName: merchant
+            columns:
+              - column:
+                  name: name
+                  value: "PAG*JoseDaSilva RIO DE JANEI BR"
+              - column:
+                  name: created_on
+                  value: NOW()
+              - column:
+                  name: mcc
+                  value: "MEAL"
+        - insert:
+            tableName: merchant
+            columns:
+              - column:
+                  name: name
+                  value: "PICPAY*BILHETEUNICO GOIANIA BR"
+              - column:
+                  name: created_on
+                  value: NOW()
+              - column:
+                  name: mcc
+                  value: "CASH"
